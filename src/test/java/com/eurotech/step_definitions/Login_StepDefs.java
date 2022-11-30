@@ -9,6 +9,7 @@ public class Login_StepDefs {
 
     @Given("The user is on the login page")
     public void the_user_is_on_the_login_page() {
+
         System.out.println("I open the browser and navigate to eurotech web page");
 
     }
@@ -26,11 +27,13 @@ public class Login_StepDefs {
 
     @When("The user enters student credentials")
     public void theUserEntersStudentCredentials() {
+
         System.out.println("I enter student username and password and click login button");
     }
 
     @When("The user enters developer credentials")
     public void theUserEntersDeveloperCredentials() {
+
         System.out.println("I enter developer username and password and click login button");
 
     }
