@@ -1,9 +1,9 @@
 package com.eurotech.step_definitions;
 
+import com.eurotech.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-import java.security.PublicKey;
 
 public class Hooks {
 
@@ -18,6 +18,7 @@ public class Hooks {
     public void tearDown() {
 
         System.out.println("\nThis is coming from After Method");
+        Driver.closeDriver();
     }
 
     // Senaryoya özel befor after methodlari olusturulabilir
