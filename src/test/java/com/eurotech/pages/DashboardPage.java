@@ -13,7 +13,7 @@ public class DashboardPage extends BasePage {
     @FindBy(xpath = "//p[contains(text(),'Welcome')]")
     public WebElement welcomeMessage;
 
-    @FindBy(css = ".nav__menu-item")
+    @FindBy(css = ".nav__menu-item") //
     public List<WebElement> menuList;
 
     @FindBy(xpath = "//a[text()='All Posts']")
@@ -60,6 +60,10 @@ public class DashboardPage extends BasePage {
 
     public String getCompany(String companyName){
         return   Driver.get().findElement(By.xpath("//td[text()='"+companyName+"']")).getText();
+    }
+
+    public String getHeaderText(String headerName){
+        return Driver.get().findElement(By.xpath("//section[@class='container']/*[text()='"+headerName+"']")).getText();
     }
 
 }

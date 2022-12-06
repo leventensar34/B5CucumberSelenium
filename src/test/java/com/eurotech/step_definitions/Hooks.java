@@ -3,6 +3,9 @@ package com.eurotech.step_definitions;
 import com.eurotech.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 
 public class Hooks {
@@ -15,9 +18,13 @@ public class Hooks {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown(Scenario scenario) {
 
-        System.out.println("\nThis is coming from After Method");
+        if (scenario.isFailed()) {
+            final byte[] screeshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screeshot, "image/png", "screenshot");
+        }
+
         Driver.closeDriver();
     }
 

@@ -30,15 +30,6 @@ public class Login_StepDefs {
 
     }
 
-    @Then("The user should be able to login")
-    public void the_user_should_be_able_to_login() {
-
-        BrowserUtils.waitFor(2);
-        String actualText = dashboardPage.welcomeMessage.getText();
-        Assert.assertTrue(actualText.contains("Welcome"));
-
-    }
-
 
     @When("The user enters student credentials")
     public void theUserEntersStudentCredentials() {

@@ -5,6 +5,7 @@ import com.eurotech.pages.LoginPage;
 import com.eurotech.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class NavigationMenu_StepDefs {
 
@@ -23,12 +24,6 @@ public class NavigationMenu_StepDefs {
 
     }
 
-    @Then("The users able to see developer text")
-    public void the_users_able_to_see_developer_text() {
-        dashboardPage.developersText.getText();
-
-    }
-
     @Then("The user navigates to All Post menu")
     public void the_user_navigates_to_all_post_menu() {
 
@@ -41,11 +36,6 @@ public class NavigationMenu_StepDefs {
     }
 
 
-    @Then("The user navigates to My Account  menu")
-    public void the_user_navigates_to_my_account_menu() {
-        dashboardPage.navigateToMenu("My Account");
-    }
-
     @Then("The users able to see dashboard text")
     public void the_users_able_to_see_dashboard_text() {
         dashboardPage.dashboardText.getText();
@@ -53,6 +43,15 @@ public class NavigationMenu_StepDefs {
     }
 
     @Then("The user navigates to Post page")
+    @Then("The user should be able to login")
+    public void the_user_should_be_able_to_login() {
+
+        BrowserUtils.waitFor(2);
+        String actualText = dashboardPage.welcomeMessage.getText();
+        Assert.assertTrue(actualText.contains("Welcome"));
+
+    }
+
     public void the_user_navigates_to_post_page() {
         BrowserUtils.waitFor(2);
         dashboardPage.navigateToSubMenu("My Posts");
@@ -70,5 +69,18 @@ public class NavigationMenu_StepDefs {
     @And("The user navigates to {string} page")
     public void theUserNavigatesToPage(String name) {
         dashboardPage.navigateToSubMenu(name);
+    }
+
+    @And("The user navigates to {string} menu")
+    public void theUserNavigatesToMenu(String menuName) {
+
+        dashboardPage.navigateToMenu(menuName);
+    }
+
+    @Then("The users should able to see header as {string}")
+    public void theUsersShouldAbleToSeeHeaderAs(String headerName) {
+        BrowserUtils.waitFor(1);
+        String actualHeader = dashboardPage.getHeaderText(headerName);
+        Assert.assertEquals("Verify that header name is display", headerName, actualHeader);
     }
 }
