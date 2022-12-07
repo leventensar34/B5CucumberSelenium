@@ -13,7 +13,7 @@ Feature: Log in as different user
     And The welcome message contains "eurotechB5"
 
     # developer
-  @wip2
+
   Scenario: Log in as a student with parameters
     Given The user is on the login page
     When The user logs in using "student33@gmail.com" and "Test12345!"

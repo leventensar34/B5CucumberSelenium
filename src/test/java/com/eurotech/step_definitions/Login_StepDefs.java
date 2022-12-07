@@ -10,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class Login_StepDefs {
 
@@ -62,5 +63,17 @@ public class Login_StepDefs {
         String actualMessage=dashboardPage.welcomeMessage.getText();
         System.out.println("actualMessage = " + actualMessage);
         Assert.assertTrue(actualMessage.contains(user));
+    }
+
+    @Then("The warning message contains {string}")
+    public void theWarningMessageContains(String expectedMessage) {
+
+        BrowserUtils.waitFor(2);
+        loginPage.getDisapperingWarningMessage(expectedMessage);
+
+        // to find disappearing warning message
+//       String validationMessage= Driver.get().findElement(By.id("loginpage-input-email")).getAttribute("validationMessage");
+//        System.out.println("validationMessage = " + validationMessage);
+//        Assert.assertEquals(expectedMessage,validationMessage);
     }
 }

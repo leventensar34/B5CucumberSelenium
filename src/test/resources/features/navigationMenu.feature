@@ -16,7 +16,7 @@ Feature: Navigation Menu
     And The user navigates to All Post menu
     Then The users able to see Posts text
 
-  @wip1
+
   Scenario: Navigation to My Account Menu
     Given The user is on the login page
     When The user enters teacher credentials
