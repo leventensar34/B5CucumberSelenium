@@ -16,11 +16,6 @@ import org.junit.runner.RunWith;
         dryRun = false,
         tags = "@edit"
 
-        /*
-         Before version 4-->{"@Smoke" and "@Wip" -->and
-         Before version 5 --> "@Smoke ,@Wip" --> or
-         Before version 5 --> {"@Login" , "~@Wip" --> and not
-         */
 
 )
 
