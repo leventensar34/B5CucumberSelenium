@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Cucumber HTML Reports</td>
+        <td>1</td>
+      <td>13 Dec 2022, 21:26</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.DashboardMenu_StepDefs.the_user_logs_in_using_following_credentials(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="1562066700">1.562</td>
+              <td class="duration" data-value="1562066700">1.562</td>
+              <td class="duration" data-value="1562066700">1.562</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.DashboardMenu_StepDefs.the_user_should_be_able_to_see_following_menu(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="91017800">0.091</td>
+              <td class="duration" data-value="91017800">0.091</td>
+              <td class="duration" data-value="91017800">0.091</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Hooks.CloseDB()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Hooks.setup()</td>
+              <td>11</td>
+              <td class="duration" data-value="727490">0.000</td>
+              <td class="duration" data-value="727490">0.002</td>
+              <td class="duration" data-value="8002400">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Hooks.setupDb()</td>
+              <td>1</td>
+              <td class="duration" data-value="999600">0.000</td>
+              <td class="duration" data-value="999600">0.000</td>
+              <td class="duration" data-value="999600">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="166089745">0.166</td>
+              <td class="duration" data-value="166089745">0.376</td>
+              <td class="duration" data-value="1826987200">1.826</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Login_StepDefs.theUserEntersDeveloperCredentials()</td>
+              <td>1</td>
+              <td class="duration" data-value="325074300">0.325</td>
+              <td class="duration" data-value="325074300">0.325</td>
+              <td class="duration" data-value="325074300">0.325</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Login_StepDefs.theUserEntersStudentCredentials()</td>
+              <td>1</td>
+              <td class="duration" data-value="290066500">0.290</td>
+              <td class="duration" data-value="290066500">0.290</td>
+              <td class="duration" data-value="290066500">0.290</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Login_StepDefs.theWarningMessageContains(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="2034263200">2.034</td>
+              <td class="duration" data-value="2034263200">2.048</td>
+              <td class="duration" data-value="8137052800">8.137</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Login_StepDefs.theWelcomeMessageContains(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="2019814766">2.019</td>
+              <td class="duration" data-value="2019814766">2.025</td>
+              <td class="duration" data-value="6059444300">6.059</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Login_StepDefs.the_user_enters_teacher_credentials()</td>
+              <td>1</td>
+              <td class="duration" data-value="651163700">0.651</td>
+              <td class="duration" data-value="651163700">0.651</td>
+              <td class="duration" data-value="651163700">0.651</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Login_StepDefs.the_user_is_on_the_login_page()</td>
+              <td>11</td>
+              <td class="duration" data-value="2317203536">2.317</td>
+              <td class="duration" data-value="2317203536">3.783</td>
+              <td class="duration" data-value="25489238900">25.489</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.Login_StepDefs.the_user_logs_in_using_and(java.lang.String,java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="386980314">0.386</td>
+              <td class="duration" data-value="386980314">0.588</td>
+              <td class="duration" data-value="2708862200">2.708</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.NavigationMenu_StepDefs.theUserNavigatesToMenu(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="59014300">0.059</td>
+              <td class="duration" data-value="59014300">0.062</td>
+              <td class="duration" data-value="177042900">0.177</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.NavigationMenu_StepDefs.theUsersShouldAbleToSeeHeaderAs(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="1033089166">1.033</td>
+              <td class="duration" data-value="1033089166">1.044</td>
+              <td class="duration" data-value="3099267500">3.099</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.eurotech.step_definitions.NavigationMenu_StepDefs.the_user_should_be_able_to_login()</td>
+              <td>7</td>
+              <td class="duration" data-value="2037694828">2.037</td>
+              <td class="duration" data-value="2037694828">2.059</td>
+              <td class="duration" data-value="14263863800">14.263</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>16</td>
+            <td>67</td>
+            <td class="duration">0.965</td>
+            <td class="duration">25.489</td>
+            <td class="duration">1:4.690</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
