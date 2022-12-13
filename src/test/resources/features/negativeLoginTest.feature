@@ -1,7 +1,7 @@
 Feature: Negative Login Test
 
-  @wip
-  Scenario Outline:
+  @wip @smoke
+  Scenario Outline: Negative test
     Given The user is on the login page
     When The user logs in using "<userType>" and "<password>"
     Then  The warning message contains "<message>"

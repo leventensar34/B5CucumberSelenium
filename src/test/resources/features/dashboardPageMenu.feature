@@ -11,7 +11,7 @@ Feature: Dashboard Page Menu
       | All Posts  |
       | My Account |
 
-
+@smoke
   Scenario: Log in as a specific user
     When The user logs in using following credentials
       | username | eurotech@gmail.com |

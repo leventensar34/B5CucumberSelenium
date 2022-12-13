@@ -19,7 +19,7 @@ Feature:Navigation to Menu with Parameters
 
   Background:
 
-
+@smoke
   Scenario: User navigates to Developers Menu
     Given The user is on the login page
     When The user logs in using "eurotech@gmail.com" and "Test12345!"
@@ -27,7 +27,7 @@ Feature:Navigation to Menu with Parameters
     And The welcome message contains "Teacher"
     And The user navigates to "Developers" menu
     Then The users should able to see header as "Filter Profiles by Skill or by Location"
-
+@smoke
   Scenario: User navigates to All Post Menu
     Given The user is on the login page
     When The user logs in using "EurotechB5@gmail.com" and "Test12345"
@@ -35,7 +35,7 @@ Feature:Navigation to Menu with Parameters
     And The welcome message contains "eurotechB5"
     And The user navigates to "All Posts" menu
     Then The users should able to see header as "Posts"
-
+@smoke
   Scenario: User navigates to My Account Menu
     Given The user is on the login page
     When The user logs in using "student33@gmail.com" and "Test12345!"
