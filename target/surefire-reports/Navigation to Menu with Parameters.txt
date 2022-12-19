@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Navigation to Menu with Parameters
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.964 s - in Navigation to Menu with Parameters
