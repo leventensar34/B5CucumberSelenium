@@ -1,7 +1,9 @@
 package com.eurotech.pages;
 
+import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.ConfigurationReader;
 import com.eurotech.utilities.Driver;
+import com.eurotech.utilities.ExcelUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 
 import java.util.List;
+import java.util.Map;
 
 public class LoginPage extends BasePage {
 
@@ -55,6 +58,7 @@ public class LoginPage extends BasePage {
         passwordInput.sendKeys(password);
         understandBtn.click();
         loginBtn.click();
+        BrowserUtils.waitFor(1);
     }
 
     public void loginAsTeacher() {
@@ -96,6 +100,8 @@ public class LoginPage extends BasePage {
         }
 
     }
+
+
 
 
 }
